@@ -1,0 +1,60 @@
+server:
+  port: '8090'
+
+spring:
+  profiles:
+    active: prod
+
+---
+
+spring:
+  Profiles: prod
+  datasource:
+    username: imnosrf
+    url: jdbc:mysql://10.159.121.240:3306/dcbapp
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: tts1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: Welcome to Niral Springboot Class!! This is test
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+
+spring:
+  Profiles: qa
+  datasource:
+    username: imnosrf
+    url: jdbc:mysql://10.159.121.240:3306/dcbapp_qa
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: tts1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: Welcome to Niral Springboot Class!!
+
+---
+
+spring:
+  Profiles: dev
+  datasource:
+    username: imnosrf
+    url: jdbc:mysql://10.159.121.240:3306/dcbapp_dev
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: tts1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+welcome:
+  message: Welcome to Niral Springboot Class!!
